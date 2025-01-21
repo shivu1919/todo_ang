@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="main">
+        <h1>ToDO List</h1>
+        <h2>Plan your task and achieve maximum productivity</h2>
+        <br/>
+        <div id="first">
+          <input (input)="addText($event)" id="inp">
+          <button (click)="addTask()">Add Task</button>
+        </div>
+        
+        <br />
+
+      
+        <div *ngFor="let i of tasks; let ind = index" id="task">
+          <li>{{i}} </li>
+          <img src="assets/delete.png" style="cursor: pointer;" (click)="deleteTask(ind)">
+         
+        </div>
+        <h1 *ngIf="tasks.length!=0">Completed Task:</h1>
+
+      <img *ngIf="tasks.length===0" src="assets/todo.png" width="170">
+      
+
+       
+    </div>
+</div>
