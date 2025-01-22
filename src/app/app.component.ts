@@ -39,8 +39,14 @@ export class AppComponent {
 
 
   taskCompleted(index:any){
-    this.completed.push(this.tasks[index])  
-    this.tasks.splice(index,1);
+
+    const audio = new Audio('assets/delete.mp3')
+    audio.play();
+
+    setTimeout(()=>{
+      this.completed.push(this.tasks[index])  
+      this.tasks.splice(index,1);
+    },500)
   }
 
 }
