@@ -34,6 +34,8 @@ export class AppComponent {
   }
 
   deleteTask(index:any){
+    const audio = new Audio('assets/delete.mp3')
+    audio.play();
     this.tasks.splice(index,1)
   }
 
