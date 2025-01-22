@@ -12,6 +12,7 @@ export class AppComponent {
   title = 'todo';
   task_text:string=''
   tasks:string[] = []
+  completed:string[]=[]
 
   addText(event:any){
       this.task_text=event.target.value
@@ -36,5 +37,10 @@ export class AppComponent {
     this.tasks.splice(index,1)
   }
 
+
+  taskCompleted(index:any){
+    this.completed.push(this.tasks[index])  
+    this.tasks.splice(index,1);
+  }
 
 }

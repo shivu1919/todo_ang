@@ -9,16 +9,18 @@
         </div>
         
         <br />
-
+        <img *ngIf="tasks.length===0" src="assets/todo.png" width="170">
       
         <div *ngFor="let i of tasks; let ind = index" id="task">
-          <li>{{i}} </li>
+          <input type="checkbox" (input)="taskCompleted(ind)">
+          <li style="list-style: none;">{{i}} </li>
           <img src="assets/delete.png" style="cursor: pointer;" (click)="deleteTask(ind)">
          
         </div>
-        <h1 *ngIf="tasks.length!=0">Completed Task:</h1>
+        <h1 *ngIf="completed.length!=0">Completed Task:</h1>
+        <li *ngFor="let j of completed" style="list-style: none; text-decoration: line-through;">{{j}}</li>
 
-      <img *ngIf="tasks.length===0" src="assets/todo.png" width="170">
+      
       
 
        
